@@ -43,6 +43,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         TF_TeachingLevel = new javax.swing.JTextField();
         B_CrearTutor = new javax.swing.JButton();
+        D_CrearEstudiante = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        TF_ConocimientoAcumulado = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        TF_NivelAprendizaje = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        B_CrearEstudiante = new javax.swing.JButton();
         TP_MenuPrincipal = new javax.swing.JTabbedPane();
         P_CrearCuenta = new javax.swing.JPanel();
         L_Bienvenido = new javax.swing.JLabel();
@@ -173,6 +182,77 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
+
+        jLabel16.setText("Estudiante");
+
+        jLabel20.setText("Conocimiento acumulado");
+
+        jLabel21.setText("Nivel de aprendizaje");
+
+        B_CrearEstudiante.setText("Crear estudiante");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(B_CrearEstudiante)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel16)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21))
+                        .addGap(125, 125, 125)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_ConocimientoAcumulado, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_NivelAprendizaje, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel16)
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(TF_ConocimientoAcumulado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(TF_NivelAprendizaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel22)
+                .addGap(46, 46, 46)
+                .addComponent(B_CrearEstudiante)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout D_CrearEstudianteLayout = new javax.swing.GroupLayout(D_CrearEstudiante.getContentPane());
+        D_CrearEstudiante.getContentPane().setLayout(D_CrearEstudianteLayout);
+        D_CrearEstudianteLayout.setHorizontalGroup(
+            D_CrearEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, D_CrearEstudianteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        D_CrearEstudianteLayout.setVerticalGroup(
+            D_CrearEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, D_CrearEstudianteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         L_Bienvenido.setText("Bienvenido");
@@ -185,6 +265,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         B_CreadorEstudiante.setText("Estudiante");
+        B_CreadorEstudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B_CreadorEstudianteMouseClicked(evt);
+            }
+        });
         B_CreadorEstudiante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B_CreadorEstudianteActionPerformed(evt);
@@ -456,6 +541,9 @@ public class Principal extends javax.swing.JFrame {
         
         tutores.add(new Tutor(clasesImpartidas, ganancias, tutoriasDadas, teachingLevel, name, age, career, birthplace, account, username, password));
         
+        usernames.add(username);
+        passwords.add(password);
+        
         // De alumno
         TF_Nombre.setText("");
         TF_Edad.setText("");
@@ -476,6 +564,48 @@ public class Principal extends javax.swing.JFrame {
         D_CrearTutor.pack();
         
     }//GEN-LAST:event_B_CrearTutorMouseClicked
+
+    private void B_CreadorEstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_CreadorEstudianteMouseClicked
+        // TODO add your handling code here:
+        D_CrearEstudiante.setVisible(true);
+        D_CrearEstudiante.setLocationRelativeTo(null);
+    }//GEN-LAST:event_B_CreadorEstudianteMouseClicked
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        // TODO add your handling code here:
+        
+        String name = TF_Nombre.getText();
+        int age = Integer.parseInt(TF_Edad.getText());
+        String career = TF_Carrera.getText();
+        String birthplace = TF_Birthplace.getText();
+        int account = Integer.parseInt(TF_Account.getText());
+        String username = TF_Username.getText();
+        String password = PF_Password.getText();
+        int conocimientoAcumulado = Integer.parseInt(TF_ConocimientoAcumulado.getText());
+        int nivelAprendizaje = Integer.parseInt(TF_NivelAprendizaje.getText());
+        
+        estudiantes.add(new Estudiante(conocimientoAcumulado, nivelAprendizaje, name, age, career, birthplace, account, username, password));
+        
+        usernames.add(username);
+        passwords.add(password);
+        
+        // De alumno
+        TF_Nombre.setText("");
+        TF_Edad.setText("");
+        TF_Carrera.setText("");
+        TF_Birthplace.setText("");
+        TF_Account.setText("");
+        TF_Username.setText("");
+        PF_Password.setText("");
+        
+        // De estudiante
+        TF_ConocimientoAcumulado.setText("");
+        TF_NivelAprendizaje.setText("");
+        
+        D_CrearEstudiante.setVisible(false);
+        D_CrearEstudiante.pack();
+        
+    }//GEN-LAST:event_jPanel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -515,8 +645,10 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_CreadorEstudiante;
     private javax.swing.JButton B_CreadorTutor;
+    private javax.swing.JButton B_CrearEstudiante;
     private javax.swing.JButton B_CrearExamen;
     private javax.swing.JButton B_CrearTutor;
+    private javax.swing.JDialog D_CrearEstudiante;
     private javax.swing.JDialog D_CrearTutor;
     private javax.swing.JLabel L_Bienvenido;
     private javax.swing.JPasswordField PF_Password;
@@ -529,9 +661,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField TF_Carrera;
     private javax.swing.JTextField TF_Clase;
     private javax.swing.JTextField TF_ClasesImpartidas;
+    private javax.swing.JTextField TF_ConocimientoAcumulado;
     private javax.swing.JTextField TF_ConocimientoRequerido;
     private javax.swing.JTextField TF_Edad;
     private javax.swing.JTextField TF_Ganancias;
+    private javax.swing.JTextField TF_NivelAprendizaje;
     private javax.swing.JTextField TF_Nombre;
     private javax.swing.JTextField TF_Puntaje;
     private javax.swing.JTextField TF_TeachingLevel;
@@ -546,10 +680,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -557,9 +695,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
     
     public ArrayList<Estudiante> estudiantes = new ArrayList();
     public ArrayList<Tutor> tutores = new ArrayList();
-    
+    public ArrayList<String> usernames = new ArrayList();
+    public ArrayList<String> passwords = new ArrayList();
 }
