@@ -74,6 +74,14 @@ public class Principal extends javax.swing.JFrame {
         PF_Password = new javax.swing.JPasswordField();
         jLabel19 = new javax.swing.JLabel();
         P_LogIn = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        RB_Estudiante = new javax.swing.JRadioButton();
+        RB_Tutor = new javax.swing.JRadioButton();
+        jLabel24 = new javax.swing.JLabel();
+        TF_Usuario = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        TF_Contrasena = new javax.swing.JTextField();
+        B_LogIn = new javax.swing.JButton();
         P_CrearExamen = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         TF_Clase = new javax.swing.JTextField();
@@ -255,6 +263,12 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        TP_MenuPrincipal.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                TP_MenuPrincipalStateChanged(evt);
+            }
+        });
+
         L_Bienvenido.setText("Bienvenido");
 
         B_CreadorTutor.setText("Tutor");
@@ -390,15 +404,71 @@ public class Principal extends javax.swing.JFrame {
 
         TP_MenuPrincipal.addTab("Crear Cuenta", P_CrearCuenta);
 
+        jLabel23.setText("Iniciar Sesión");
+
+        RB_Estudiante.setText("Estudiante");
+
+        RB_Tutor.setText("Tutor");
+
+        jLabel24.setText("Usuario");
+
+        TF_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TF_UsuarioActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("Contraseña");
+
+        B_LogIn.setText("Log In");
+
         javax.swing.GroupLayout P_LogInLayout = new javax.swing.GroupLayout(P_LogIn);
         P_LogIn.setLayout(P_LogInLayout);
         P_LogInLayout.setHorizontalGroup(
             P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 672, Short.MAX_VALUE)
+            .addGroup(P_LogInLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_LogInLayout.createSequentialGroup()
+                        .addComponent(RB_Estudiante)
+                        .addGap(81, 81, 81)
+                        .addComponent(RB_Tutor))
+                    .addGroup(P_LogInLayout.createSequentialGroup()
+                        .addGroup(P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel25))
+                        .addGap(124, 124, 124)
+                        .addGroup(P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TF_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 233, Short.MAX_VALUE))
+            .addGroup(P_LogInLayout.createSequentialGroup()
+                .addGap(283, 283, 283)
+                .addGroup(P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel23)
+                    .addComponent(B_LogIn))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         P_LogInLayout.setVerticalGroup(
             P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGroup(P_LogInLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jLabel23)
+                .addGap(69, 69, 69)
+                .addGroup(P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(TF_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(TF_Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(P_LogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RB_Estudiante)
+                    .addComponent(RB_Tutor))
+                .addGap(48, 48, 48)
+                .addComponent(B_LogIn)
+                .addGap(97, 97, 97))
         );
 
         TP_MenuPrincipal.addTab("Log In", P_LogIn);
@@ -607,6 +677,29 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jPanel1MouseClicked
 
+    private void TP_MenuPrincipalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TP_MenuPrincipalStateChanged
+        // TODO add your handling code here:
+        
+        //De alumno
+        TF_Nombre.setText("");
+        TF_Edad.setText("");
+        TF_Carrera.setText("");
+        TF_Birthplace.setText("");
+        TF_Account.setText("");
+        TF_Username.setText("");
+        PF_Password.setText("");
+        
+        //De examen
+        TF_Clase.setText("");
+        TF_ConocimientoRequerido.setText("");
+        TF_Puntaje.setText("");
+        TF_Tema.setText("");
+    }//GEN-LAST:event_TP_MenuPrincipalStateChanged
+
+    private void TF_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_UsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_UsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -648,6 +741,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton B_CrearEstudiante;
     private javax.swing.JButton B_CrearExamen;
     private javax.swing.JButton B_CrearTutor;
+    private javax.swing.JButton B_LogIn;
     private javax.swing.JDialog D_CrearEstudiante;
     private javax.swing.JDialog D_CrearTutor;
     private javax.swing.JLabel L_Bienvenido;
@@ -656,6 +750,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel P_CrearExamen;
     private javax.swing.JPanel P_CrearTutor;
     private javax.swing.JPanel P_LogIn;
+    private javax.swing.JRadioButton RB_Estudiante;
+    private javax.swing.JRadioButton RB_Tutor;
     private javax.swing.JTextField TF_Account;
     private javax.swing.JTextField TF_Birthplace;
     private javax.swing.JTextField TF_Carrera;
@@ -663,6 +759,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField TF_ClasesImpartidas;
     private javax.swing.JTextField TF_ConocimientoAcumulado;
     private javax.swing.JTextField TF_ConocimientoRequerido;
+    private javax.swing.JTextField TF_Contrasena;
     private javax.swing.JTextField TF_Edad;
     private javax.swing.JTextField TF_Ganancias;
     private javax.swing.JTextField TF_NivelAprendizaje;
@@ -672,6 +769,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField TF_Tema;
     private javax.swing.JTextField TF_TutoriasDadas;
     private javax.swing.JTextField TF_Username;
+    private javax.swing.JTextField TF_Usuario;
     private javax.swing.JTabbedPane TP_MenuPrincipal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -688,6 +786,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
