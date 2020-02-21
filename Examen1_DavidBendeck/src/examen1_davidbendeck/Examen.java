@@ -63,5 +63,4 @@ public class Examen {
         return "Examen{" + "clase=" + clase + ", conocimientoRequerido=" + conocimientoRequerido + ", tema=" + tema + ", puntaje=" + puntaje + '}';
     }
     
-    
 }
