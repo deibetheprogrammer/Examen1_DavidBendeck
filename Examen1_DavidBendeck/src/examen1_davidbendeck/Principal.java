@@ -5,6 +5,10 @@
  */
 package examen1_davidbendeck;
 
+import examen1_davidbendeck.Alumnos.Estudiante;
+import examen1_davidbendeck.Alumnos.Tutor;
+import java.util.ArrayList;
+
 /**
  *
  * @author davidbendeck
@@ -34,6 +38,15 @@ public class Principal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         P_LogIn = new javax.swing.JPanel();
         P_CrearExamen = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        TF_Clase = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        TF_ConocimientoRequerido = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        TF_Tema = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        TF_Puntaje = new javax.swing.JTextField();
+        B_CrearExamen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,15 +99,67 @@ public class Principal extends javax.swing.JFrame {
 
         TP_MenuPrincipal.addTab("Log In", P_LogIn);
 
+        jLabel1.setText("Clase");
+
+        jLabel2.setText("Conocimiento Requerido");
+
+        jLabel3.setText("Tema");
+
+        jLabel4.setText("Puntaje");
+
+        B_CrearExamen.setText("Guardar Examen");
+        B_CrearExamen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B_CrearExamenMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout P_CrearExamenLayout = new javax.swing.GroupLayout(P_CrearExamen);
         P_CrearExamen.setLayout(P_CrearExamenLayout);
         P_CrearExamenLayout.setHorizontalGroup(
             P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 658, Short.MAX_VALUE)
+            .addGroup(P_CrearExamenLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_CrearExamenLayout.createSequentialGroup()
+                        .addComponent(B_CrearExamen)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(P_CrearExamenLayout.createSequentialGroup()
+                        .addGroup(P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                        .addGroup(P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_Clase, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_ConocimientoRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_Tema, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_Puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(124, 124, 124))))
         );
         P_CrearExamenLayout.setVerticalGroup(
             P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
+            .addGroup(P_CrearExamenLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_Clase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(TF_ConocimientoRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(TF_Tema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(P_CrearExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(TF_Puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addComponent(B_CrearExamen)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         TP_MenuPrincipal.addTab("Crear Examen", P_CrearExamen);
@@ -118,6 +183,24 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void B_CrearExamenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_CrearExamenMouseClicked
+        // TODO add your handling code here:
+        
+        String clase = TF_Clase.getText();
+        int conocimientoRequerido = Integer.parseInt(TF_ConocimientoRequerido.getSelectedText());
+        String tema = TF_Tema.getText();
+        int puntaje = Integer.parseInt(TF_Puntaje.getText());
+        
+        for (Estudiante estudiante : estudiantes) {
+            estudiante.getExamenesPendientes().add(new Examen(clase, conocimientoRequerido, tema, puntaje));
+        }
+        
+        TF_Clase.setText("");
+        TF_ConocimientoRequerido.setText("");
+        TF_Puntaje.setText("");
+        TF_Tema.setText("");
+    }//GEN-LAST:event_B_CrearExamenMouseClicked
 
     /**
      * @param args the command line arguments
@@ -155,12 +238,25 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_CrearExamen;
     private javax.swing.JButton B_CrearTutor;
     private javax.swing.JLabel L_Bienvenido;
     private javax.swing.JPanel P_CrearCuenta;
     private javax.swing.JPanel P_CrearExamen;
     private javax.swing.JPanel P_LogIn;
+    private javax.swing.JTextField TF_Clase;
+    private javax.swing.JTextField TF_ConocimientoRequerido;
+    private javax.swing.JTextField TF_Puntaje;
+    private javax.swing.JTextField TF_Tema;
     private javax.swing.JTabbedPane TP_MenuPrincipal;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
+    
+    public ArrayList<Estudiante> estudiantes = new ArrayList();
+    public ArrayList<Tutor> tutores = new ArrayList();
+    
 }
