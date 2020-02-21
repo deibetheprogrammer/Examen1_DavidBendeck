@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Tutor extends Alumno {
     
-    private ArrayList<String> clases = new ArrayList();
+    private String clases;
     private int ganancias;
     private int tutoriasDadas;
     private int teachingLevel;
@@ -21,18 +21,19 @@ public class Tutor extends Alumno {
     public Tutor() {
     }
 
-    public Tutor(int ganancias, int tutoriasDadas, int teachingLevel, String name, int age, String career, String birthplace, int account, String username, String password) {
+    public Tutor(String clases, int ganancias, int tutoriasDadas, int teachingLevel, String name, int age, String career, String birthplace, int account, String username, String password) {
         super(name, age, career, birthplace, account, username, password);
+        this.clases = clases;
         this.ganancias = ganancias;
         this.tutoriasDadas = tutoriasDadas;
         this.teachingLevel = teachingLevel;
     }
 
-    public ArrayList<String> getClases() {
+    public String getClases() {
         return clases;
     }
 
-    public void setClases(ArrayList<String> clases) {
+    public void setClases(String clases) {
         this.clases = clases;
     }
 
