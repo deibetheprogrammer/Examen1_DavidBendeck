@@ -21,7 +21,8 @@ public class Estudiante extends Alumno {
     public Estudiante() {
     }
 
-    public Estudiante(int conocimientoAcumulado, int nivelAprendizaje) {
+    public Estudiante(int conocimientoAcumulado, int nivelAprendizaje, String name, int age, String career, String birthplace, int account, String username, String password) {
+        super(name, age, career, birthplace, account, username, password);
         this.conocimientoAcumulado = conocimientoAcumulado;
         this.nivelAprendizaje = nivelAprendizaje;
     }
@@ -52,7 +53,7 @@ public class Estudiante extends Alumno {
 
     @Override
     public String toString() {
-        return super.toString() + "-->" + "Estudiante{" + "conocimientoAcumulado=" + conocimientoAcumulado + ", nivelAprendizaje=" + nivelAprendizaje + ", examenesPendientes=" + examenesPendientes + '}';
+        return "Estudiante{" + "conocimientoAcumulado=" + conocimientoAcumulado + ", nivelAprendizaje=" + nivelAprendizaje + ", examenesPendientes=" + examenesPendientes + '}';
     }
     
 }

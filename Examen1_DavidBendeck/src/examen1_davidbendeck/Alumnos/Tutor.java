@@ -15,5 +15,54 @@ public class Tutor extends Alumno {
     
     private ArrayList<String> clases = new ArrayList();
     private int ganancias;
+    private int tutoriasDadas;
     private int teachingLevel;
+
+    public Tutor() {
+    }
+
+    public Tutor(int ganancias, int tutoriasDadas, int teachingLevel, String name, int age, String career, String birthplace, int account, String username, String password) {
+        super(name, age, career, birthplace, account, username, password);
+        this.ganancias = ganancias;
+        this.tutoriasDadas = tutoriasDadas;
+        this.teachingLevel = teachingLevel;
+    }
+
+    public ArrayList<String> getClases() {
+        return clases;
+    }
+
+    public void setClases(ArrayList<String> clases) {
+        this.clases = clases;
+    }
+
+    public int getGanancias() {
+        return ganancias;
+    }
+
+    public void setGanancias(int ganancias) {
+        this.ganancias = ganancias;
+    }
+
+    public int getTutoriasDadas() {
+        return tutoriasDadas;
+    }
+
+    public void setTutoriasDadas(int tutoriasDadas) {
+        this.tutoriasDadas = tutoriasDadas;
+    }
+
+    public int getTeachingLevel() {
+        return teachingLevel;
+    }
+
+    public void setTeachingLevel(int teachingLevel) {
+        this.teachingLevel = teachingLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Tutor{" + "clases=" + clases + ", ganancias=" + ganancias + ", tutoriasDadas=" + tutoriasDadas + ", teachingLevel=" + teachingLevel + '}';
+    }
+    
 }
