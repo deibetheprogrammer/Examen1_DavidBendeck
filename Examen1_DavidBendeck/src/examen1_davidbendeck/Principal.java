@@ -152,6 +152,9 @@ public class Principal extends javax.swing.JFrame {
         B_DarTuto = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         B_LogOut1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        T_ListarDatosT = new javax.swing.JTable();
         TP_MenuPrincipal = new javax.swing.JTabbedPane();
         P_CrearCuenta = new javax.swing.JPanel();
         L_Bienvenido = new javax.swing.JLabel();
@@ -1058,6 +1061,48 @@ public class Principal extends javax.swing.JFrame {
 
         TP_MenuTutor.addTab("Log Out", jPanel3);
 
+        T_ListarDatosT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Clases impartidas", "Ganancias", "Tutorias dadas", "Nivel de Enseñanza"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        T_ListarDatosT.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                T_ListarDatosTFocusGained(evt);
+            }
+        });
+        jScrollPane2.setViewportView(T_ListarDatosT);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(442, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(348, Short.MAX_VALUE))
+        );
+
+        TP_MenuTutor.addTab("Listar Datos", jPanel4);
+
         javax.swing.GroupLayout D_MenuTutorLayout = new javax.swing.GroupLayout(D_MenuTutor.getContentPane());
         D_MenuTutor.getContentPane().setLayout(D_MenuTutorLayout);
         D_MenuTutorLayout.setHorizontalGroup(
@@ -1891,6 +1936,22 @@ public class Principal extends javax.swing.JFrame {
         tutorActual = -1;
     }//GEN-LAST:event_B_LogOut1ActionPerformed
 
+    private void T_ListarDatosTFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_ListarDatosTFocusGained
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)T_ListarDatos.getModel();
+
+        model.setRowCount(0);
+        
+        for (Tutor tutor : tutores) {
+            model.addRow(new Object[]{
+                tutor.getClases(),
+                tutor.getGanancias(),
+                tutor.getTutoriasDadas(),
+                tutor.getTeachingLevel()
+            });
+        }
+    }//GEN-LAST:event_T_ListarDatosTFocusGained
+
     /**
      * @param args the command line arguments
      */
@@ -2016,6 +2077,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable T_ExamenesPendientes;
     private javax.swing.JTable T_ExamenesResueltos;
     private javax.swing.JTable T_ListarDatos;
+    private javax.swing.JTable T_ListarDatosT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2081,7 +2143,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
