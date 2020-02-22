@@ -1938,7 +1938,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void T_ListarDatosTFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_T_ListarDatosTFocusGained
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)T_ListarDatos.getModel();
+        DefaultTableModel model = (DefaultTableModel)T_ListarDatosT.getModel();
 
         model.setRowCount(0);
         
