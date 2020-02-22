@@ -60,7 +60,7 @@ public class Examen {
 
     @Override
     public String toString() {
-        return "Examen{" + "clase=" + clase + ", conocimientoRequerido=" + conocimientoRequerido + ", tema=" + tema + ", puntaje=" + puntaje + '}';
+        return "Examen{" + "clase=" + clase + ", Conocimiento Requerido=" + conocimientoRequerido + ", tema=" + tema + ", puntaje=" + puntaje + '}';
     }
     
 }
