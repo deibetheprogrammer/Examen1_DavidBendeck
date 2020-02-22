@@ -865,6 +865,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         B_GuardarDatosT.setText("Guardar datos");
+        B_GuardarDatosT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B_GuardarDatosTMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout P_ModificarDatos1Layout = new javax.swing.GroupLayout(P_ModificarDatos1);
         P_ModificarDatos1.setLayout(P_ModificarDatos1Layout);
@@ -993,7 +998,7 @@ public class Principal extends javax.swing.JFrame {
             D_MenuTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(D_MenuTutorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TP_MenuTutor, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                .addComponent(TP_MenuTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 482, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1718,6 +1723,10 @@ public class Principal extends javax.swing.JFrame {
         PF_Password2.setText(tutor.getPassword());
         
         //De Tutor
+        TF_ClasesImpartidas1.setText(tutor.getClases());
+        TF_Ganancias1.setText(String.valueOf(tutor.getGanancias()));
+        TF_TutoriasDadas1.setText(String.valueOf(tutor.getTutoriasDadas()));
+        TF_TeachingLevel1.setText(String.valueOf(tutor.getTeachingLevel()));
     }//GEN-LAST:event_B_ObtenerDatosTMouseClicked
 
     private void TP_MenuPrincipalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TP_MenuPrincipalFocusGained
@@ -1729,6 +1738,49 @@ public class Principal extends javax.swing.JFrame {
     private void PF_ContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PF_ContrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PF_ContrasenaActionPerformed
+
+    private void B_GuardarDatosTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_GuardarDatosTMouseClicked
+        // TODO add your handling code here:
+        
+        String name = TF_Nombre2.getText();
+        int age = Integer.parseInt(TF_Edad2.getText());
+        String career = TF_Carrera2.getText();
+        String birthplace = TF_Birthplace2.getText();
+        int account = Integer.parseInt(TF_Account2.getText());
+        String username = TF_Username2.getText();
+        String password = PF_Password2.getText();
+         String clasesImpartidas = TF_ClasesImpartidas1.getText();
+        int ganancias = Integer.parseInt(TF_Ganancias1.getText());
+        int tutoriasDadas = Integer.parseInt(TF_TutoriasDadas1.getText());
+        int teachingLevel = Integer.parseInt(TF_TeachingLevel1.getText());
+        
+        Tutor tutor = tutores.get(Integer.parseInt(TF_IndiceT.getText()));
+        
+        // modificar los valores
+        tutor.setName(name);
+        tutor.setAge(age);
+        tutor.setCareer(career);
+        tutor.setBirthplace(birthplace);
+        tutor.setAccount(account);
+        tutor.setUsername(username);
+        tutor.setPassword(password);
+        tutor.setClases(clasesImpartidas);
+        tutor.setGanancias(ganancias);
+        tutor.setTutoriasDadas(tutoriasDadas);
+        tutor.setTeachingLevel(teachingLevel);
+        
+        TF_Nombre2.setText("");
+        TF_Edad2.setText("");
+        TF_Carrera2.setText("");
+        TF_Birthplace2.setText("");
+        TF_Account2.setText("");
+        PF_Password.setText("");
+        TF_ClasesImpartidas1.setText("");
+        TF_Ganancias1.setText("");
+        TF_TutoriasDadas1.setText("");
+        TF_TeachingLevel1.setText("");
+        
+    }//GEN-LAST:event_B_GuardarDatosTMouseClicked
 
     /**
      * @param args the command line arguments
