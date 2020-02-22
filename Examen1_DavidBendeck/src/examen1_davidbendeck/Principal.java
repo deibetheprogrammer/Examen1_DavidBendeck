@@ -146,6 +146,10 @@ public class Principal extends javax.swing.JFrame {
         TF_IndiceT = new javax.swing.JTextField();
         B_ObtenerDatosT = new javax.swing.JButton();
         B_GuardarDatosT = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel62 = new javax.swing.JLabel();
+        CB_DarTutoria = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         TP_MenuPrincipal = new javax.swing.JTabbedPane();
         P_CrearCuenta = new javax.swing.JPanel();
         L_Bienvenido = new javax.swing.JLabel();
@@ -985,6 +989,47 @@ public class Principal extends javax.swing.JFrame {
 
         TP_MenuTutor.addTab("Modificar datos", P_ModificarDatos1);
 
+        jLabel62.setText("Elija un tutoria");
+
+        CB_DarTutoria.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                CB_DarTutoriaFocusGained(evt);
+            }
+        });
+
+        jButton1.setText("Dar Tutoria");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel62)
+                    .addComponent(CB_DarTutoria, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(685, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel62)
+                .addGap(18, 18, 18)
+                .addComponent(CB_DarTutoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(171, 171, 171)
+                .addComponent(jButton1)
+                .addContainerGap(431, Short.MAX_VALUE))
+        );
+
+        TP_MenuTutor.addTab("Dar Tutoria", jPanel2);
+
         javax.swing.GroupLayout D_MenuTutorLayout = new javax.swing.GroupLayout(D_MenuTutor.getContentPane());
         D_MenuTutor.getContentPane().setLayout(D_MenuTutorLayout);
         D_MenuTutorLayout.setHorizontalGroup(
@@ -1782,6 +1827,35 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_B_GuardarDatosTMouseClicked
 
+    private void CB_DarTutoriaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CB_DarTutoriaFocusGained
+        // TODO add your handling code here:
+        
+        CB_DarTutoria.removeAllItems();
+        
+        Tutor tutor = tutores.get(tutorActual);
+        
+        for (Tutoria tut : tutorias) {
+            if (tut.getTutor() == tutor) {
+                CB_DarTutoria.addItem(tut);
+            }
+        }
+    }//GEN-LAST:event_CB_DarTutoriaFocusGained
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        
+        Random rand = new Random();
+        
+        Tutoria tutoria = (Tutoria) CB_DarTutoria.getSelectedItem();
+        Tutor tutor = tutores.get(tutorActual);
+        
+        for (Estudiante e : tutoria.getEstudiantes()) {
+            e.setConocimientoAcumulado(e.getConocimientoAcumulado() + rand.nextInt(100));
+        }
+        
+        tutor.setGanancias(tutor.getGanancias() + 270);
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1831,6 +1905,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton B_ObtenerDatos;
     private javax.swing.JButton B_ObtenerDatosT;
     private javax.swing.JButton B_ReservarTuto;
+    private javax.swing.JComboBox<Tutoria> CB_DarTutoria;
     private javax.swing.JComboBox<String> CB_HacerExamen;
     private javax.swing.JComboBox<String> CB_Tutores;
     private javax.swing.JDialog D_CrearEstudiante;
@@ -1904,6 +1979,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable T_ExamenesPendientes;
     private javax.swing.JTable T_ExamenesResueltos;
     private javax.swing.JTable T_ListarDatos;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1962,10 +2038,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
