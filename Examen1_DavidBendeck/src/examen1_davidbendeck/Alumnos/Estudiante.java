@@ -17,6 +17,7 @@ public class Estudiante extends Alumno {
     private int conocimientoAcumulado;
     private int nivelAprendizaje;
     private ArrayList<Examen> examenesPendientes = new ArrayList();
+    private ArrayList<Examen> examenesResueltos = new ArrayList();
 
     public Estudiante() {
     }
@@ -51,9 +52,17 @@ public class Estudiante extends Alumno {
         this.examenesPendientes = examenesPendientes;
     }
 
+    public ArrayList<Examen> getExamenesResueltos() {
+        return examenesResueltos;
+    }
+
+    public void setExamenesResueltos(ArrayList<Examen> examenesResueltos) {
+        this.examenesResueltos = examenesResueltos;
+    }
+
     @Override
     public String toString() {
-        return "Estudiante{" + "conocimientoAcumulado=" + conocimientoAcumulado + ", nivelAprendizaje=" + nivelAprendizaje + ", examenesPendientes=" + examenesPendientes + '}';
+        return "Estudiante{" + "conocimientoAcumulado=" + conocimientoAcumulado + ", nivelAprendizaje=" + nivelAprendizaje + ", examenesPendientes=" + examenesPendientes + ", examenesResueltos=" + examenesResueltos + '}';
     }
     
 }
