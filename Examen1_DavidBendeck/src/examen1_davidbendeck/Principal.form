@@ -1419,7 +1419,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="B_DarTuto" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
                               <Component id="CB_DarTutoria" min="-2" pref="276" max="-2" attributes="0"/>
                           </Group>
@@ -1435,7 +1435,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="CB_DarTutoria" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="B_DarTuto" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="431" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1455,12 +1455,52 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Tutoria&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="B_DarTuto">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Dar Tutoria"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="B_DarTutoMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel3">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Log Out">
+                    <Property name="tabTitle" type="java.lang.String" value="Log Out"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="237" max="-2" attributes="0"/>
+                          <Component id="B_LogOut1" min="-2" pref="207" max="-2" attributes="0"/>
+                          <EmptySpace pref="618" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                          <Component id="B_LogOut1" min="-2" pref="103" max="-2" attributes="0"/>
+                          <EmptySpace pref="497" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="B_LogOut1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Log Out"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_LogOut1ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

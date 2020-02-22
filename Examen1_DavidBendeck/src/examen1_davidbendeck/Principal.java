@@ -149,7 +149,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
         CB_DarTutoria = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        B_DarTuto = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        B_LogOut1 = new javax.swing.JButton();
         TP_MenuPrincipal = new javax.swing.JTabbedPane();
         P_CrearCuenta = new javax.swing.JPanel();
         L_Bienvenido = new javax.swing.JLabel();
@@ -997,10 +999,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Dar Tutoria");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        B_DarTuto.setText("Dar Tutoria");
+        B_DarTuto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                B_DarTutoMouseClicked(evt);
             }
         });
 
@@ -1011,7 +1013,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(101, 101, 101)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(B_DarTuto)
                     .addComponent(jLabel62)
                     .addComponent(CB_DarTutoria, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(685, Short.MAX_VALUE))
@@ -1024,11 +1026,37 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(CB_DarTutoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(171, 171, 171)
-                .addComponent(jButton1)
+                .addComponent(B_DarTuto)
                 .addContainerGap(431, Short.MAX_VALUE))
         );
 
         TP_MenuTutor.addTab("Dar Tutoria", jPanel2);
+
+        B_LogOut1.setText("Log Out");
+        B_LogOut1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_LogOut1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addComponent(B_LogOut1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(618, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(B_LogOut1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(497, Short.MAX_VALUE))
+        );
+
+        TP_MenuTutor.addTab("Log Out", jPanel3);
 
         javax.swing.GroupLayout D_MenuTutorLayout = new javax.swing.GroupLayout(D_MenuTutor.getContentPane());
         D_MenuTutor.getContentPane().setLayout(D_MenuTutorLayout);
@@ -1841,7 +1869,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CB_DarTutoriaFocusGained
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void B_DarTutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_DarTutoMouseClicked
         // TODO add your handling code here:
         
         Random rand = new Random();
@@ -1854,7 +1882,14 @@ public class Principal extends javax.swing.JFrame {
         }
         
         tutor.setGanancias(tutor.getGanancias() + 270);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_B_DarTutoMouseClicked
+
+    private void B_LogOut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_LogOut1ActionPerformed
+        // TODO add your handling code here:
+        D_MenuTutor.setVisible(false);
+        
+        tutorActual = -1;
+    }//GEN-LAST:event_B_LogOut1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1897,11 +1932,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton B_CrearEstudiante;
     private javax.swing.JButton B_CrearExamen;
     private javax.swing.JButton B_CrearTutor;
+    private javax.swing.JButton B_DarTuto;
     private javax.swing.JButton B_GuadarDatos;
     private javax.swing.JButton B_GuardarDatosT;
     private javax.swing.JButton B_HacerExamen;
     private javax.swing.JButton B_LogIn;
     private javax.swing.JButton B_LogOut;
+    private javax.swing.JButton B_LogOut1;
     private javax.swing.JButton B_ObtenerDatos;
     private javax.swing.JButton B_ObtenerDatosT;
     private javax.swing.JButton B_ReservarTuto;
@@ -1979,7 +2016,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable T_ExamenesPendientes;
     private javax.swing.JTable T_ExamenesResueltos;
     private javax.swing.JTable T_ListarDatos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2044,6 +2080,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
